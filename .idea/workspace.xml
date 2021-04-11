@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3c795c2-67e9-4aaf-ae1f-b1241a18aa2d" name="Default Changelist" comment="" />
+    <list default="true" id="a3c795c2-67e9-4aaf-ae1f-b1241a18aa2d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/activity/activity (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/activity/activity (1).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/api-gateway/api-gateway (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/api-gateway/api-gateway (1).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/gcash-mini-hw-template (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/gcash-mini-hw-template (1).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/user-management/user-management (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/user-management/user-management (1).iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +23,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1r0Pn1l2JWWSD3Ow5lUltLFjUYK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,7 +33,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gcash-mini-hw-template-master" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/product/src/main/java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Patrick\Documents\Github\group-project\kent-final-final\mynt-cadetship-gcash-mini\gcash-mini-hw-template-master\gcash-mini-hw-template-master\product\src\main\java" />
+      <recent name="C:\Users\Patrick\Documents\Github\group-project\kent-final-final\mynt-cadetship-gcash-mini\gcash-mini-hw-template-master\gcash-mini-hw-template-master\product\src\main\resources" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,5 +63,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
