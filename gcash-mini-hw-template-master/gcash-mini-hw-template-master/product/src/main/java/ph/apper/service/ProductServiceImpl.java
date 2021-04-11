@@ -1,4 +1,4 @@
-package apper.service;
+package ph.apper.service;
 
 import ph.apper.exception.InvalidProductPurchaseException;
 import ph.apper.exception.ProductNotFoundException;

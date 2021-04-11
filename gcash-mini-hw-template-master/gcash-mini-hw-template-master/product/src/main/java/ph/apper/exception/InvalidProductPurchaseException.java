@@ -1,4 +1,4 @@
-package apper.exception;
+package ph.apper.exception;
 
 public class InvalidProductPurchaseException extends Exception{
     public InvalidProductPurchaseException (String message) {
