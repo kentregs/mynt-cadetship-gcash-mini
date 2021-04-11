@@ -5,14 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22ca048-882f-407b-bd60-a64792ad8b3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/exception/TransferAmountRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/payload/TransferRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/ProductApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ServiceExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/domain/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/domain/ProductPurchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/exception/InvalidProductPurchaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/exception/ProductNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/AddProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/AddProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/GenericResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/GetProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/ProductData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/PurchaseProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.pid" beforeDir="false" afterPath="$PROJECT_DIR$/application.pid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -48,8 +64,24 @@
       <recent name="C:\Users\matthewkent.regalado\Documents\Microservices\mynt-cadetship-gcash-mini\gcash-mini-hw-template-master\gcash-mini-hw-template-master\activity\src\main" />
       <recent name="C:\Users\matthewkent.regalado\Documents\Microservices\mynt-cadetship-gcash-mini\gcash-mini-hw-template-master\gcash-mini-hw-template-master\activity\src\main\java" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ph.apper.controller" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.gatewayApp">
+  <component name="RunManager" selected="Application.ProductApp">
+    <configuration name="ProductApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ph.apper.ProductApp" />
+      <module name="project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ph.apper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="actApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ph.apper.activity.actApp" />
       <module name="activity" />
@@ -91,9 +123,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProductApp" />
+        <item itemvalue="Application.userApp" />
         <item itemvalue="Application.gatewayApp" />
         <item itemvalue="Application.actApp" />
-        <item itemvalue="Application.userApp" />
       </list>
     </recent_temporary>
   </component>

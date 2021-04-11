@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/gcash-mini-hw.iml" filepath="$PROJECT_DIR$/.idea/gcash-mini-hw.iml" />
       <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/project/project.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/project.iml" />
       <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/user-management.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/user-management.iml" />
     </modules>
   </component>
