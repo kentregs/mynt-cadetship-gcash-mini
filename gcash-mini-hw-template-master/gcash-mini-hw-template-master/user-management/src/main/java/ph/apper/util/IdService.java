@@ -12,4 +12,8 @@ public final class IdService {
     public static String generateCode(int size) {
         return RandomStringUtils.randomAlphanumeric(size);
     }
+
+    public static String generateAccountId(int size) {
+        return "ACCT"+RandomStringUtils.randomNumeric(size);
+    }
 }

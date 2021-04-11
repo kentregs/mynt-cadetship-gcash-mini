@@ -106,7 +106,7 @@ public class UserServiceImpl implements UserService {
 
             if (!(isAuthenticated(email)) && chk) {
                 // generate Account Id
-                String accId = "ACCT" + IdService.getNextUserId();
+                String accId = IdService.generateAccountId(6);
                 LOGGER.info("Generated Account ID: {}", accId);
 
                 // set new attributes for corresponding user
