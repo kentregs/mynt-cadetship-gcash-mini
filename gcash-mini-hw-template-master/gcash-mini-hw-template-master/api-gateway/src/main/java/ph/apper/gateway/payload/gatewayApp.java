@@ -1,4 +1,4 @@
-package ph.apper.gateway;
+package ph.apper.gateway.payload;
 
 import lombok.Data;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableConfigurationProperties({App.GCashMiniProperties.class})
-public class App {
+@EnableConfigurationProperties({gatewayApp.GCashMiniProperties.class})
+public class gatewayApp {
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(App.class);
+        SpringApplication application = new SpringApplication(gatewayApp.class);
         application.addListeners(new ApplicationPidFileWriter());
         application.run(args);
     }
@@ -27,5 +27,8 @@ public class App {
     @ConfigurationProperties(prefix = "gcash.mini")
     public static class GCashMiniProperties {
         private String activityUrl;
+        private String accountUrl;
+        private String productUrl;
+        private String transferUrl;
     }
 }

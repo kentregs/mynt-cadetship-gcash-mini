@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template/activity/activity.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template/activity/activity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/activity/activity (1).iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/activity/activity (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/api-gateway/api-gateway (1).iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/api-gateway/api-gateway (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template/gcash-mini-hw-template.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template/gcash-mini-hw-template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/gcash-mini-hw-template (1).iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/gcash-mini-hw-template (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mynt-cadetship-gcash-mini.iml" filepath="$PROJECT_DIR$/.idea/mynt-cadetship-gcash-mini.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template/user-management/user-management.iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template/user-management/user-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/user-management/user-management (1).iml" filepath="$PROJECT_DIR$/gcash-mini-hw-template-master/gcash-mini-hw-template-master/user-management/user-management (1).iml" />
+    </modules>
+  </component>
+</project>

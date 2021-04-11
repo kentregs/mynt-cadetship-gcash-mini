@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.ApplicationPidFileWriter;
 
 @SpringBootApplication
-public class App {
+public class actApp {
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(App.class);
+        SpringApplication application = new SpringApplication(actApp.class);
         application.addListeners(new ApplicationPidFileWriter());
         application.run(args);
     }

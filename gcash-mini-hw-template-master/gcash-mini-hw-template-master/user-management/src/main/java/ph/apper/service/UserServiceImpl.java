@@ -105,8 +105,9 @@ public class UserServiceImpl implements UserService {
             User user = getUserByEmail(email);
             // verify password
             BCrypt.Result verify = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
+            boolean chk = verify.verified;
 
-            if (!(isAuthenticated(email)) && verify.verified) {
+            if (!(isAuthenticated(email)) && chk) {
                 // generate Account Id
                 String accId = "ACCT" + IdService.getNextUserId();
                 LOGGER.info("Generated Account ID: {}", accId);
@@ -123,10 +124,14 @@ public class UserServiceImpl implements UserService {
                 return new AuthenticationResponse(accId);
             }
             else {
-                throw new InvalidAuthenticationRequestException("Account already authenticated!");
+                if (chk)
+                    throw new InvalidAuthenticationRequestException("Account already authenticated!");
+                else
+                    throw new InvalidAuthenticationRequestException("Incorrect password!");
             }
         }
         else {
+            System.out.println("test");
             throw new InvalidAuthenticationRequestException("Unverified account!");
         }
     }
