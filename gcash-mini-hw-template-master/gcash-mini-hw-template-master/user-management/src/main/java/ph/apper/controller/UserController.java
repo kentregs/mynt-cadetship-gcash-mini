@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ph.apper.exception.InvalidAccountCreationRequestException;
-import ph.apper.exception.InvalidAuthenticationRequestException;
-import ph.apper.exception.InvalidVerificationRequestException;
-import ph.apper.exception.UserNotFoundException;
+import ph.apper.exception.*;
 import ph.apper.payload.*;
 import ph.apper.service.UserService;
 
@@ -75,7 +72,20 @@ public class UserController {
 
     // Get Account
     @GetMapping("{id}")
-    public ResponseEntity<UserData> getUser(@PathVariable("id") String userId) throws UserNotFoundException {
+    public ResponseEntity<UserData> getUser (@PathVariable("id") String userId) throws UserNotFoundException {
         return ResponseEntity.ok(userService.getAccount(userId));
+    }
+
+    //Transfer Money
+    @PostMapping("transfer")
+    public ResponseEntity<GenericResponse> transfer (
+            @Valid @RequestBody TransferRequest request) throws TransferAmountRequestException, UserNotFoundException{
+        LOGGER.info("Transfer request received");
+
+        userService.transfer(request.getSender(), request.getReceiver(), request.getAmount());
+
+        LOGGER.info("Transfer request successful!");
+
+        return ResponseEntity.ok(new GenericResponse("Transfer success!"));
     }
 }

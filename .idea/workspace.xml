@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3c795c2-67e9-4aaf-ae1f-b1241a18aa2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template/user-management/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template/user-management/src/main/java/mgmt_main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a3c795c2-67e9-4aaf-ae1f-b1241a18aa2d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,5 +34,16 @@
       <updated>1618110196660</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

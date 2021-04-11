@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service;
 import ph.apper.domain.Activity;
 import ph.apper.domain.User;
 import ph.apper.domain.VerificationCode;
-import ph.apper.exception.InvalidAccountCreationRequestException;
-import ph.apper.exception.InvalidAuthenticationRequestException;
-import ph.apper.exception.InvalidVerificationRequestException;
-import ph.apper.exception.UserNotFoundException;
+import ph.apper.exception.*;
 import ph.apper.payload.AccountCreationRequest;
 import ph.apper.payload.AccountCreationResponse;
 import ph.apper.payload.AuthenticationResponse;
@@ -142,6 +139,28 @@ public class UserServiceImpl implements UserService {
         User u = getUserById(accId);
 
         return UserServiceUtil.toUserData(u);
+    }
+
+    @Override
+    public void transfer(String senderId, String receiverId, Double amount) throws TransferAmountRequestException, UserNotFoundException{
+
+        User u1 = getUserById(senderId);
+
+        User u2 = getUserById(receiverId);
+
+        if (!(u1.getBalance() < amount)){
+            LOGGER.info("Transfer of Php {} between {} and {}", amount, senderId, receiverId);
+            u1.setBalance(u1.getBalance() - amount);
+            LOGGER.info("{} new balance: {}", u1.getAccId(), u1.getBalance());
+            u2.setBalance(u2.getBalance() + amount);
+            LOGGER.info("{} new balance: {}", u2.getAccId(), u2.getBalance());
+
+            Activity act = getActivityByEmail(u1.getEmail());
+            act.setAction("TRANSFER");
+            act.setIdentifier("email = " + u1.getEmail());
+        }
+
+        else throw new TransferAmountRequestException("Not enough funds!");
     }
 
     private User getUserById(String accId) throws UserNotFoundException {
