@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @RestController
 @CrossOrigin
 @RequestMapping("product")
-@ComponentScan("ph.apper.service.ProductService")
+@ComponentScan("ph.apper")
 public class ProductController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
     private final ProductService productService;

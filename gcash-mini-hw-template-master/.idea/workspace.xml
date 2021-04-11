@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22ca048-882f-407b-bd60-a64792ad8b3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/ProductApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ServiceExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/domain/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/domain/ProductPurchase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/exception/InvalidProductPurchaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/exception/ProductNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/AddProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/AddProductResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/GenericResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/GetProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/ProductData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/payload/PurchaseProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/service/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +50,7 @@
   <component name="RunManager" selected="Application.ProductApp">
     <configuration name="ProductApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ph.apper.ProductApp" />
-      <module name="project" />
+      <module name="product" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ph.apper.*" />
