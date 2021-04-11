@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("activity")
+@RequestMapping
 public class ActivityController {
 
     private final List<Activity> activities = new ArrayList<>();
@@ -24,7 +24,7 @@ public class ActivityController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> create (@Valid @RequestBody Activity request) {
+    public ResponseEntity<Void> create(@Valid @RequestBody Activity request) {
         activities.add(request);
         return ResponseEntity.ok().build();
     }

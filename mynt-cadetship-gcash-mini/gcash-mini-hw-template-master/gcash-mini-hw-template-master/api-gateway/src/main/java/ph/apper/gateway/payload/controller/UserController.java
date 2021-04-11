@@ -27,22 +27,24 @@ public class UserController {
     public ResponseEntity create (@RequestBody AccountCreationRequest request) {
         LOGGER.info("{}", request);
 
-        ResponseEntity<Object> response = restTemplate.postForEntity(gCashMiniProperties.getAccountUrl(), request, Object.class);
+        Activity activity = new Activity();
+        activity.setAction("REGISTRATION");
+        activity.setIdentifier("email = " + request.getEmail());
 
-        if(response.getStatusCode().is2xxSuccessful()) {
+//        ResponseEntity<Object> actResponse = restTemplate.postForEntity(gCashMiniProperties.getActivityUrl(), activity, Object.class);
+        ResponseEntity<Object> userResponse = restTemplate.postForEntity(gCashMiniProperties.getAccountUrl(), request, Object.class);
+
+        if(userResponse.getStatusCode().is2xxSuccessful()) {
+//            System.out.println("Success!");
             LOGGER.info("Account creation successful!");
-
-            // init activity object if operation is successful
-            Activity activity = new Activity();
-            activity.setAction("ACCOUNT CREATION");
-            activity.setIdentifier("email = " + request.getEmail());
-
-            restTemplate.postForEntity(gCashMiniProperties.getActivityUrl(), activity, Object.class);
         }
         else {
-            LOGGER.info("Err = " + response.getStatusCode());
+//            System.out.println("Err = " + userResponse.getStatusCode());
+//            LOGGER.info("Err = " + actResponse.getStatusCode());
+            LOGGER.info("Err = " + userResponse.getStatusCode());
         }
 
-        return ResponseEntity.ok(response.getBody());
+        return ResponseEntity.ok(userResponse);
     }
+
 }
