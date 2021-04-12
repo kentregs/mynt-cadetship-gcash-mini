@@ -5,9 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import ph.apper.gateway.payload.activityPayload.ActivityRequest;
 import ph.apper.gateway.payload.gatewayApp;
 import ph.apper.gateway.payload.activityPayload.Activity;
-import ph.apper.gateway.payload.userPayload.AccountCreationRequest;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,20 +38,11 @@ public class ActivityController {
         return ResponseEntity.status(response.getStatusCode()).build();
     }
 
-//    @PostMapping
-//    public ResponseEntity create (@RequestBody Activity activity) {
-//        LOGGER.info("{}", activity);
-//
-//        ResponseEntity<Object> response
-//                = restTemplate.postForEntity(gCashMiniProperties.getActivityUrl(), activity, Object.class);
-//
-//        if(response.getStatusCode().is2xxSuccessful()) {
-//            LOGGER.info("Activity added successfully!");
-//        }
-//        else {
-//            LOGGER.info("Err = " + response.getStatusCode());
-//        }
-//
-//        return ResponseEntity.ok().build();
-//    }
+    @PostMapping
+    public ResponseEntity add (@RequestBody ActivityRequest request) {
+        LOGGER.info("{}", request);
+        restTemplate.postForEntity(gCashMiniProperties.getActivityUrl(), request, Object.class);
+
+        return ResponseEntity.ok().build();
+    }
 }
