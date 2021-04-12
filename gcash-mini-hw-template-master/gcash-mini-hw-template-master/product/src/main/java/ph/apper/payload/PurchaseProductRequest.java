@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 public class PurchaseProductRequest {
-    @JsonProperty(value = "product_id")
+    @JsonProperty(value = "productId")
     private String productId;
 
-    @JsonProperty(value = "account_id")
+    @JsonProperty(value = "accountId")
     private String accountId;
 }

@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ph.apper.domain.User;
 import ph.apper.exception.*;
 import ph.apper.payload.*;
 import ph.apper.service.UserService;
@@ -74,6 +75,16 @@ public class UserController {
     @GetMapping("{id}")
     public ResponseEntity<UserData> getUser (@PathVariable("id") String userId) throws UserNotFoundException {
         return ResponseEntity.ok(userService.getAccount(userId));
+    }
+
+    //Update Account
+    @PostMapping("{id}")
+    public Object updateUser(
+            @PathVariable String id,
+            @Valid @RequestBody UpdateUserRequest request) throws UserNotFoundException {
+        userService.updateUser(request);
+        LOGGER.info("Successfully updated account balance");
+        return null;
     }
 
     //Transfer Money
