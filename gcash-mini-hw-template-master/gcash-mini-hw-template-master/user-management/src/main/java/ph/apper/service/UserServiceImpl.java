@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
         newAcc.setEmail(request.getEmail());
         newAcc.setPassword(BCrypt.withDefaults().hashToString(4, request.getPassword().toCharArray()));
         newAcc.setDateRegistered(LocalDateTime.now());
-        newAcc.setBalance(0.0);
+        newAcc.setBalance(50.0);
 
         String code = IdService.generateCode(6);
         VerificationCode verificationCode = new VerificationCode(request.getEmail(), code);
@@ -145,7 +145,6 @@ public class UserServiceImpl implements UserService {
     public void transfer(String senderId, String receiverId, Double amount) throws TransferAmountRequestException, UserNotFoundException{
 
         User u1 = getUserById(senderId);
-
         User u2 = getUserById(receiverId);
 
         if (!(u1.getBalance() < amount)){
