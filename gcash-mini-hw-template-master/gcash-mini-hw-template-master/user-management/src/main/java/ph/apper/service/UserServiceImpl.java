@@ -9,16 +9,14 @@ import ph.apper.domain.Activity;
 import ph.apper.domain.User;
 import ph.apper.domain.VerificationCode;
 import ph.apper.exception.*;
-import ph.apper.payload.AccountCreationRequest;
-import ph.apper.payload.AccountCreationResponse;
-import ph.apper.payload.AuthenticationResponse;
-import ph.apper.payload.UserData;
+import ph.apper.payload.*;
 import ph.apper.util.IdService;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 @Profile({"dev", "prod"})
@@ -33,25 +31,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public AccountCreationResponse create (AccountCreationRequest request)
             throws InvalidAccountCreationRequestException {
-//        LocalDate parsedBirthDate = LocalDate.parse(request.getBirthDate());
-//        Period periodDiff = Period.between(parsedBirthDate, LocalDate.now());
-//        if (periodDiff.getYears() < 18) {
-//            throw new InvalidAccountCreationRequestException("age must be at least 18");
-//        }
-
         if (isRegisteredAndVerifiedUser(request.getEmail())) {
             throw new InvalidAccountCreationRequestException("Account already created!");
         }
 
+        // init new User object
         User newAcc = new User();
 
         newAcc.setFirstName(request.getFirstName());
         newAcc.setLastName(request.getLastName());
-//        newUser.setBirthDate(parsedBirthDate);
         newAcc.setEmail(request.getEmail());
         newAcc.setPassword(BCrypt.withDefaults().hashToString(4, request.getPassword().toCharArray()));
         newAcc.setDateRegistered(LocalDateTime.now());
-        newAcc.setBalance(0.0);
+        newAcc.setBalance(50.0);
 
         String code = IdService.generateCode(6);
         VerificationCode verificationCode = new VerificationCode(request.getEmail(), code);
@@ -60,7 +52,7 @@ public class UserServiceImpl implements UserService {
         // save new activity details
         Activity newAct = new Activity(request.getEmail());
 
-        newAct.setAction("ACCOUNT_CREATION");
+        newAct.setAction("ACCOUNT CREATION");
         newAct.setEmail(request.getEmail());
         newAct.setIdentifier("email=" + request.getEmail());
 
@@ -93,6 +85,9 @@ public class UserServiceImpl implements UserService {
         Activity act = getActivityByEmail(email);
         act.setAction("VERIFICATION");
         act.setIdentifier("email = " + user.getEmail());
+
+        // add new activity to list
+        activities.add(act);
     }
 
     @Override
@@ -118,6 +113,9 @@ public class UserServiceImpl implements UserService {
                 act.setAction("AUTHENTICATION");
                 act.setIdentifier("account id = " + accId);
 
+                // add new activity to list
+                activities.add(act);
+
                 return new AuthenticationResponse(accId);
             }
             else {
@@ -134,7 +132,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserData getAccount(String accId) throws UserNotFoundException {
+    public UserData getAccount (String accId) throws UserNotFoundException {
         // query verified and authenticated account using given account ID
         User u = getUserById(accId);
 
@@ -142,13 +140,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void transfer(String senderId, String receiverId, Double amount) throws TransferAmountRequestException, UserNotFoundException{
+    public void transfer (String senderId, String receiverId, Double amount) throws TransferAmountRequestException, UserNotFoundException{
 
         User u1 = getUserById(senderId);
-
         User u2 = getUserById(receiverId);
 
-        if (!(u1.getBalance() < amount)){
+        if (!(u1.getBalance() < amount)) {
             LOGGER.info("Transfer of Php {} between {} and {}", amount, senderId, receiverId);
             u1.setBalance(u1.getBalance() - amount);
             LOGGER.info("{} new balance: {}", u1.getAccId(), u1.getBalance());
@@ -158,9 +155,26 @@ public class UserServiceImpl implements UserService {
             Activity act = getActivityByEmail(u1.getEmail());
             act.setAction("TRANSFER");
             act.setIdentifier("email = " + u1.getEmail());
+
+            // add new activity to list
+            activities.add(act);
         }
 
         else throw new TransferAmountRequestException("Not enough funds!");
+    }
+
+    @Override
+    public void updateUser(UpdateUserRequest request) throws UserNotFoundException {
+        Integer index = getUserIndexById(request.getAccId());  //gets index
+        User user = getUserById(request.getAccId());   // gets the original user data
+        user.setBalance(request.getBalance()); //updates the balance to that from the post request
+        // update list
+        users.set(index, user);
+    }
+
+    private Integer getUserIndexById(String accId) throws UserNotFoundException {
+        int index = users.stream().map(user -> user.getAccId()).collect(Collectors.toList()).indexOf(accId);
+        return index; //gets index of a particular user in the 'list' DB
     }
 
     private User getUserById(String accId) throws UserNotFoundException {

@@ -16,5 +16,5 @@ public class UserData {
     private String email;
 
     @JsonProperty(value = "balance")
-    private Double accBalance;
+    private Double balance;
 }

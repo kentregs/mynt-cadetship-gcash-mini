@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b22ca048-882f-407b-bd60-a64792ad8b3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/project/src/main/java/ph/apper/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/src/main/java/ph/apper/gateway/payload/userPayload/TransferRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/src/main/java/ph/apper/gateway/payload/userPayload/TransferRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +44,11 @@
       <recent name="C:\Users\matthewkent.regalado\Documents\Microservices\mynt-cadetship-gcash-mini\gcash-mini-hw-template-master\gcash-mini-hw-template-master\activity\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ph.apper.gateway.payload.userPayload" />
       <recent name="ph.apper.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProductApp">
+  <component name="RunManager" selected="Application.gatewayApp">
     <configuration name="ProductApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ph.apper.ProductApp" />
       <module name="product" />
@@ -102,9 +103,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProductApp" />
-        <item itemvalue="Application.userApp" />
         <item itemvalue="Application.gatewayApp" />
+        <item itemvalue="Application.userApp" />
+        <item itemvalue="Application.ProductApp" />
         <item itemvalue="Application.actApp" />
       </list>
     </recent_temporary>
