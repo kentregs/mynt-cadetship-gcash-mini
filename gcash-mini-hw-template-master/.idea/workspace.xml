@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b22ca048-882f-407b-bd60-a64792ad8b3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/src/main/java/ph/apper/gateway/payload/userPayload/TransferRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.pid" beforeDir="false" afterPath="$PROJECT_DIR$/application.pid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/src/main/java/ph/apper/gateway/payload/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/src/main/java/ph/apper/gateway/payload/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/target/classes/ph/apper/gateway/payload/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/api-gateway/target/classes/ph/apper/gateway/payload/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/src/main/java/ph/apper/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/target/classes/ph/apper/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/gcash-mini-hw-template-master/user-management/target/classes/ph/apper/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

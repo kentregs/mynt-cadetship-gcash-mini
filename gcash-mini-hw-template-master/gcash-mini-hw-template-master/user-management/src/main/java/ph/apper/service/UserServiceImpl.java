@@ -33,21 +33,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public AccountCreationResponse create (AccountCreationRequest request)
             throws InvalidAccountCreationRequestException {
-//        LocalDate parsedBirthDate = LocalDate.parse(request.getBirthDate());
-//        Period periodDiff = Period.between(parsedBirthDate, LocalDate.now());
-//        if (periodDiff.getYears() < 18) {
-//            throw new InvalidAccountCreationRequestException("age must be at least 18");
-//        }
-
         if (isRegisteredAndVerifiedUser(request.getEmail())) {
             throw new InvalidAccountCreationRequestException("Account already created!");
         }
 
+        // init new User object
         User newAcc = new User();
 
         newAcc.setFirstName(request.getFirstName());
         newAcc.setLastName(request.getLastName());
-//        newUser.setBirthDate(parsedBirthDate);
         newAcc.setEmail(request.getEmail());
         newAcc.setPassword(BCrypt.withDefaults().hashToString(4, request.getPassword().toCharArray()));
         newAcc.setDateRegistered(LocalDateTime.now());
@@ -60,7 +54,7 @@ public class UserServiceImpl implements UserService {
         // save new activity details
         Activity newAct = new Activity(request.getEmail());
 
-        newAct.setAction("ACCOUNT_CREATION");
+        newAct.setAction("ACCOUNT CREATION");
         newAct.setEmail(request.getEmail());
         newAct.setIdentifier("email=" + request.getEmail());
 
@@ -93,6 +87,9 @@ public class UserServiceImpl implements UserService {
         Activity act = getActivityByEmail(email);
         act.setAction("VERIFICATION");
         act.setIdentifier("email = " + user.getEmail());
+
+        // add new activity to list
+        activities.add(act);
     }
 
     @Override
@@ -118,6 +115,9 @@ public class UserServiceImpl implements UserService {
                 act.setAction("AUTHENTICATION");
                 act.setIdentifier("account id = " + accId);
 
+                // add new activity to list
+                activities.add(act);
+
                 return new AuthenticationResponse(accId);
             }
             else {
@@ -134,7 +134,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserData getAccount(String accId) throws UserNotFoundException {
+    public UserData getAccount (String accId) throws UserNotFoundException {
         // query verified and authenticated account using given account ID
         User u = getUserById(accId);
 
@@ -142,7 +142,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void transfer(String senderId, String receiverId, Double amount) throws TransferAmountRequestException, UserNotFoundException{
+    public void transfer (String senderId, String receiverId, Double amount) throws TransferAmountRequestException, UserNotFoundException{
 
         User u1 = getUserById(senderId);
         User u2 = getUserById(receiverId);
@@ -157,6 +157,9 @@ public class UserServiceImpl implements UserService {
             Activity act = getActivityByEmail(u1.getEmail());
             act.setAction("TRANSFER");
             act.setIdentifier("email = " + u1.getEmail());
+
+            // add new activity to list
+            activities.add(act);
         }
 
         else throw new TransferAmountRequestException("Not enough funds!");
