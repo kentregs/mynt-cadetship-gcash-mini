@@ -76,6 +76,16 @@ public class UserController {
         return ResponseEntity.ok(userService.getAccount(userId));
     }
 
+    // Update User Balance
+    @PostMapping("{id}")
+    public Object updateUser(
+            @PathVariable String id,
+            @Valid @RequestBody UpdateUserRequest request) throws UserNotFoundException {
+        userService.updateUser(request);
+        LOGGER.info("Successfully updated account balance");
+        return null;
+    }
+
     //Transfer Money
     @PostMapping("transfer")
     public ResponseEntity<GenericResponse> transfer (
