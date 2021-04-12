@@ -9,16 +9,14 @@ import ph.apper.domain.Activity;
 import ph.apper.domain.User;
 import ph.apper.domain.VerificationCode;
 import ph.apper.exception.*;
-import ph.apper.payload.AccountCreationRequest;
-import ph.apper.payload.AccountCreationResponse;
-import ph.apper.payload.AuthenticationResponse;
-import ph.apper.payload.UserData;
+import ph.apper.payload.*;
 import ph.apper.util.IdService;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 @Profile({"dev", "prod"})
@@ -163,6 +161,20 @@ public class UserServiceImpl implements UserService {
         }
 
         else throw new TransferAmountRequestException("Not enough funds!");
+    }
+
+    @Override
+    public void updateUser(UpdateUserRequest request) throws UserNotFoundException {
+        Integer index = getUserIndexById(request.getAccId());  //gets index
+        User user = getUserById(request.getAccId());   // gets the original user data
+        user.setBalance(request.getBalance()); //updates the balance to that from the post request
+        // update list
+        users.set(index, user);
+    }
+
+    private Integer getUserIndexById(String accId) throws UserNotFoundException {
+        int index = users.stream().map(user -> user.getAccId()).collect(Collectors.toList()).indexOf(accId);
+        return index; //gets index of a particular user in the 'list' DB
     }
 
     private User getUserById(String accId) throws UserNotFoundException {

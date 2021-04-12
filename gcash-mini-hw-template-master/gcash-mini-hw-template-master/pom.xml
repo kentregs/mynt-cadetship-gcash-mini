@@ -8,6 +8,7 @@
         <module>activity</module>
         <module>user-management</module>
         <module>project</module>
+        <module>product</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

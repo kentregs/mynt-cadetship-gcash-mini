@@ -13,7 +13,7 @@ public class UserServiceUtil {
         userData.setFirstName(u.getFirstName());
         userData.setLastName(u.getLastName());
         userData.setEmail(u.getEmail());
-        userData.setAccBalance(u.getBalance());
+        userData.setBalance(u.getBalance());
 
         return userData;
     }
