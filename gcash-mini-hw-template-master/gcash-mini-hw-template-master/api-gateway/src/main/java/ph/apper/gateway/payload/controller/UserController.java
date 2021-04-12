@@ -9,6 +9,7 @@ import ph.apper.gateway.payload.gatewayApp;
 import ph.apper.gateway.payload.activityPayload.Activity;
 import ph.apper.gateway.payload.userPayload.AccountCreationRequest;
 import ph.apper.gateway.payload.userPayload.AuthenticationRequest;
+import ph.apper.gateway.payload.userPayload.TransferRequest;
 import ph.apper.gateway.payload.userPayload.VerificationRequest;
 
 @RestController
@@ -87,7 +88,9 @@ public class UserController {
             Activity activity = new Activity();
             activity.setAction("ACCOUNT AUTHENTICATION");
             activity.setIdentifier("email = " + request.getEmail());
+            activity.setDetails("Generated account ID = " + response.getBody());
 
+            LOGGER.info("ACTIVITY: {}", activity);
             restTemplate.postForEntity(gCashMiniProperties.getActivityUrl(), activity, Object.class);
         }
         else {
@@ -98,7 +101,7 @@ public class UserController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity getUser (@PathVariable("id") String userId) /* throws UserNotFoundException */ {
+    public ResponseEntity getUser (@PathVariable("id") String userId) {
         ResponseEntity<Object> response
                 = restTemplate.getForEntity(gCashMiniProperties.getAccountUrl() + "/" +userId, Object.class);
 
@@ -108,5 +111,34 @@ public class UserController {
         }
 
         return ResponseEntity.status(response.getStatusCode()).build();
+    }
+
+    @PostMapping("transfer")
+    public ResponseEntity transfer (@RequestBody TransferRequest request) {
+        LOGGER.info("{}", request);
+
+        ResponseEntity<Object> response
+                = restTemplate.postForEntity(gCashMiniProperties.getAccountUrl()+"/transfer", request, Object.class);
+
+        if(response.getStatusCode().is2xxSuccessful()) {
+            LOGGER.info("Fund transfer successful!");
+
+            // init activity object if operation is successful
+            Activity activity = new Activity();
+            activity.setAction("TRANSFER");
+            activity.setIdentifier(
+                "sender acc ID = " + request.getSender() +
+                " receiver acc ID = " + request.getReceiver()
+            );
+            activity.setDetails("amount transferred = " + request.getAmount());
+
+            LOGGER.info("ACTIVITY: {}", activity);
+            restTemplate.postForEntity(gCashMiniProperties.getActivityUrl(), activity, Object.class);
+        }
+        else {
+            LOGGER.info("Err = " + response.getStatusCode());
+        }
+
+        return ResponseEntity.ok(response.getBody());
     }
 }

@@ -147,7 +147,7 @@ public class UserServiceImpl implements UserService {
         User u1 = getUserById(senderId);
         User u2 = getUserById(receiverId);
 
-        if (!(u1.getBalance() < amount)){
+        if (!(u1.getBalance() < amount)) {
             LOGGER.info("Transfer of Php {} between {} and {}", amount, senderId, receiverId);
             u1.setBalance(u1.getBalance() - amount);
             LOGGER.info("{} new balance: {}", u1.getAccId(), u1.getBalance());
